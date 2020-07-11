@@ -1,0 +1,98 @@
+@import "lib/fonts";
+
+$colours: blue, red, green, yellow, orange, black, grey,white;
+$sizes: (
+  "10": 10px,
+  "20": 20px,
+  "40": 40px,
+  "60": 60px,
+  "100": 100px,
+  "sm": 20px,
+  "md": 32px,
+  "lg": 42px,
+  "xl": 60px
+);
+
+$mgpd: ("2":2px,"4":4px,"6":6px,"8":8px,"14":14px,"20":20px, "sm":10px, "md":14px, "lg":20px, "xl": 25px);
+
+$align: (
+  "left": left,
+  "center": center,
+  "right": right,
+  "justify": justify
+);
+$flexs: ("400": 400px, "600": 600px, "1000": 1000px);
+$justifications: ("center": center,"start": flex-start, "btwn":space-between, "around":space-around);
+
+$shad-col: #dbdbdb;
+$shadows: (
+  "soft": 0px 0px 48px -22px $shad-col,
+  "hard": 10px 10px 0px 0px $shad-col,
+);
+
+@each $shad, $value in $shadows {
+  .sh-#{$shad} {
+    box-shadow: $value;
+  }
+}
+
+@each $just, $value in $justifications {
+  .justify-#{$just} {
+    justify-content: $value;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+.r-wrap {
+  flex-wrap: wrap-reverse;
+}
+
+
+@each $count, $value in $flexs {
+  .flex-item-#{$count} {
+    flex: 1 1 $value;
+  }
+}
+
+@each $font, $value in $fonts {
+  .font-#{$font} {
+    font-family: $value;
+  }
+}
+
+@each $alignment, $value in $align {
+  .text-align-#{$alignment} {
+    text-align: $value;
+  }
+}
+
+@each $size, $value in $sizes {
+  .font-size-#{$size} {
+    font-size: $value;
+  }
+}
+
+@each $colour in $colours {
+  .text-color-#{$colour} {
+    color: $colour;
+  }
+}
+
+@each $colour in $colours {
+  .bg-#{$colour} {
+    background: $colour;
+  }
+}
+
+@each $size, $value in $mgpd {
+  .mg-#{$size} {
+    margin: $value;
+  }
+}
+
